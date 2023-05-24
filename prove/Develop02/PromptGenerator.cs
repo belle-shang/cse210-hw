@@ -3,11 +3,12 @@ using System;
 class PromptGenerator
 {
 
-    List <string> prompts;
+    public List <string> _prompts;
+    public string randomPrompt;
 
     public PromptGenerator ()
     {
-        prompts = new List <string>
+        _prompts = new List <string>
         {
             "What was the best part of my day? ",
             "What was the most courageous decision I made? ",
@@ -18,12 +19,13 @@ class PromptGenerator
             "If I had one thing I could do over today, what would it be? ",
             "How did I see the hand of the Lord in my life today? "
         };
-
     }
 
     public string GetRandomPrompt ()
     {
-        return "";
+        Random rand = new Random ();
+        int index = rand.Next (_prompts.Count);
+        string randomPrompt = _prompts [index];
+        return randomPrompt;
     }
-
 }

@@ -18,7 +18,6 @@ class Program
             "3. Load ",
             "4. Save ",
             "5. Quit ",
-            "What would you like to do? "
         };
         
         while (choice != 5)
@@ -27,23 +26,27 @@ class Program
             {
                 Console.WriteLine (manuItem);
             }
+            Console.Write ("What would you like to do? ");
             choice = int.Parse (Console.ReadLine ()); 
         
             switch (choice) {
                 case 1:
+                    journal.CreateEntry ();
+
                     PromptGenerator question = new PromptGenerator ();
                     question.GetRandomPrompt ();
                     break;
                 case 2:
-                
+                    journal.DisplayEntry ();
                     break;
                 case 3:
-                
+                    journal.LoadFile ();
                     break;
                 case 4:
-                    
+                    journal.SaveFile ();
                     break;
-                
+                case 5:
+                    break;
                 default:
                     Console.WriteLine ("You typed it wrong. Please do between 1-5");
                     break;
