@@ -15,7 +15,6 @@ class Journal
         {
             entry.DisplayEntry ();
         }
-
     }
 
     public void CreateEntry ()
@@ -37,11 +36,27 @@ class Journal
 
     public void SaveFile ()
     {
-
+        foreach (Entry entry in entries)
+        {
+            records.Add (entry.getEntryAsCSV ());
+        }
+        Console.WriteLine ("Name of file to save? ");
+        string _fileName = Console.ReadLine ();
+        File.WriteAllLines (_fileName, records);
     }
 
     public void LoadFile ()
     {
+        Console.WriteLine ("Name of file to load? ");
+        string _fileName = Console.ReadLine ();
+
+        List <string> records = System.IO.File.ReadAllLines (_fileName).ToList ();
+        foreach (string record in records)
+        {
+            string [] splitString = record.Split (" | ");
+            Entry entry = new Entry (splitString [0], splitString [1], splitString [2]);
+            entries.Add (entry);
+        }
 
     }
 }
