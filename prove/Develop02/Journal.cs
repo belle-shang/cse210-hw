@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Journal
 {
@@ -36,6 +37,16 @@ class Journal
 
     public void SaveFile ()
     {
+        //string fileName = "myFile.txt";
+
+        //using (StreamWriter outputFile = new StreamWriter (filename))
+        //{
+            //outputFile.WriteLine ("This will be the first line in the file.");
+    
+            //string color = "Blue";
+            //outputFile.WriteLine ($"My favorite color is {color}");
+        //}
+
         foreach (Entry entry in entries)
         {
             records.Add (entry.getEntryAsCSV ());
