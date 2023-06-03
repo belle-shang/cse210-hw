@@ -18,7 +18,7 @@ class Address
         return _country.Equals ("USA");
     }
 
-    public string GetAddressDetails ()
+    public string GetAddressDetail ()
     {
         return $"Street: {_streetAddress}\n" +
             $"City: {_city}\n" +

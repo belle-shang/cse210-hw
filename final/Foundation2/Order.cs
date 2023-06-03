@@ -40,7 +40,7 @@ class Order
      public string GetShippingLabel ()
     {
         string shippingLabel = $"Name: {_customer.GetCustomerName ()}\n";
-        shippingLabel += _customer._address.GetAddressDetails ();
+        shippingLabel += _customer._address.GetAddressDetail ();
 
         return shippingLabel;
     }
