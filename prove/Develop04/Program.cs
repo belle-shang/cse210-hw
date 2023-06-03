@@ -8,4 +8,11 @@ class Program
 
         
     }
+    public static void waitSecond (int numSecond)
+    {
+        for (int i = 0; i <= numSecond; i++)
+        {
+            Thread.Sleep (1000);
+        }
+    }
 }
