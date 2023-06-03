@@ -47,13 +47,13 @@ class Journal
             //outputFile.WriteLine ($"My favorite color is {color}");
         //}
 
-        foreach (Entry entry in entries)
-        {
-            records.Add (entry.getEntryAsCSV ());
-        }
-        Console.WriteLine ("Name of file to save? ");
-        string _fileName = Console.ReadLine ();
-        File.WriteAllLines (_fileName, records);
+        //foreach (Entry entry in entries)
+        //{
+            //records.Add (entry.getEntryAsCSV ());
+        //}
+        //Console.WriteLine ("Name of file to save? ");
+        //string _fileName = Console.ReadLine ();
+        //File.WriteAllLines (_fileName, records);
     }
 
     public void LoadFile ()
